@@ -3,6 +3,7 @@ services:
   app:
     build: .
     container_name: iot-api
+    restart: always
     ports:
       - "3000:3000"
     depends_on:
@@ -11,10 +12,6 @@ services:
     image: mongo
     container_name: iot-db
     restart: always
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: admin
-      MONGO_INITDB_ROOT_PASSWORD: adminDev
-      MONGO_INITDB_DATABASE: db_dev
     ports:
       - "27017:27017"
     volumes:
