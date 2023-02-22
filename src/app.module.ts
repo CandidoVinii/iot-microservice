@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './controller/app.controller';
-import { AppService } from './services/app.service';
+import { IotController } from './controller/iot.controller';
+import { IotService } from './services/iot.service';
 import { MongooseModule } from '@nestjs/mongoose';
 import { Iot, IotSchema } from './schemas/iot.schema';
 
@@ -12,7 +12,7 @@ const mongoUrl: string =
     MongooseModule.forRoot(mongoUrl),
     MongooseModule.forFeature([{ name: Iot.name, schema: IotSchema }]),
   ],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [IotController],
+  providers: [IotService],
 })
 export class AppModule {}

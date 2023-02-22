@@ -1,22 +1,16 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { AppController } from '../src/controller/app.controller';
-import { AppService } from '../src/services/app.service';
+import { IotController } from '../src/controller/iot.controller';
+import { IotService } from '../src/services/iot.service';
 
 describe('AppController', () => {
-  let appController: AppController;
+  let appController: IotController;
 
   beforeEach(async () => {
     const app: TestingModule = await Test.createTestingModule({
-      controllers: [AppController],
-      providers: [AppService],
+      controllers: [IotController],
+      providers: [IotService],
     }).compile();
 
-    appController = app.get<AppController>(AppController);
-  });
-
-  describe('root', () => {
-    it('should return "Hello World!"', () => {
-      expect(appController.getHello()).toBe('Hello World!');
-    });
+    appController = app.get<IotController>(IotController);
   });
 });
