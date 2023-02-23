@@ -16,5 +16,14 @@ services:
       - "27017:27017"
     volumes:
       - dbdata:/data/db
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: iot-queue
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      RABBITMQ_DEFAULT_USER: admin
+      RABBITMQ_DEFAULT_PASS: admin
 volumes:
   dbdata:
