@@ -5,7 +5,7 @@ export type IotDocument = Iot & Document;
 
 @Schema({ strict: false, versionKey: false })
 export class Iot {
-  @Prop({ required: true })
+  @Prop()
   name: string;
 
   @Prop()
