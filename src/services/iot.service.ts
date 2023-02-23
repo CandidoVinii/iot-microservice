@@ -9,8 +9,8 @@ export class IotService {
     @InjectModel(Iot.name) private iotDeviceModel: Model<IotDocument>,
   ) {}
 
-  async create(dispositivo: Iot): Promise<Iot> {
-    const newIotDevice = new this.iotDeviceModel(dispositivo);
+  async create(device: Iot): Promise<Iot> {
+    const newIotDevice = new this.iotDeviceModel(device);
     return newIotDevice.save();
   }
 
